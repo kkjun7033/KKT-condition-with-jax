@@ -13,10 +13,10 @@ def f(x, theta):
     return jnp.sum(jnp.dot(obj, x))
 
 def H(x):   
-    return jnp.dot(lhs_inequal, x) - rhs_inequal 
+    return jnp.dot(lhs_equal, x) - rhs_equal
 
 def G(x):   
-    return jnp.dot(lhs_equal, x) - rhs_equal
+    return jnp.dot(lhs_inequal, x) - rhs_inequal     
 
 grad = jax.grad(f)
 
